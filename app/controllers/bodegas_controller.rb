@@ -69,6 +69,6 @@ class BodegasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bodega_params
-      params.fetch(:bodega, {})
+      params.require(:bodega).permit(:name, :address)
     end
 end

@@ -1,6 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Bodegas</h1>
+<ul>
+<% @bodegas.each do |bodega| %>
+<li><%= bodega.name %></li>
+    <% end %>
+
+</ul>
+
 
 <table>
   <thead>
