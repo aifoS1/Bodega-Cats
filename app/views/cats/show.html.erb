@@ -4,12 +4,12 @@
   <strong>Name:</strong>
   <%= @cat.name %>
 
-  <%= image_tag @cat.avatar.url(:thumb) %>
+  <%= image_tag @cat.avatar.url(:square) %>
 </p>
 
 <p>
   <strong>Bodega:</strong>
-  <%= @cat.bodega %>
+  <%= @cat.bodega.address %>
 </p>
 
 <%= link_to 'Edit', edit_cat_path(@cat) %> |

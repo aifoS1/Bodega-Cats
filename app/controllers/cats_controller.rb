@@ -15,6 +15,7 @@ class CatsController < ApplicationController
   # GET /cats/new
   def new
     @cat = Cat.new
+    @bodega = Bodega.new
   end
 
   # GET /cats/1/edit
@@ -25,9 +26,11 @@ class CatsController < ApplicationController
   # POST /cats.json
   def create
     @cat = Cat.new(cat_params)
+    bodega = Bodega.new(address: @cat.bodega.address)
 
     respond_to do |format|
       if @cat.save
+        bodega.save
         format.html { redirect_to @cat, notice: 'Cat was successfully created.' }
         format.json { render :show, status: :created, location: @cat }
       else

@@ -5,7 +5,9 @@ class Cat < ActiveRecord::Base
     medium: "300x300>", 
     thumb: "100x100>",
     square: '200x200#' }, 
-    default_url: "/images/:style/missing.png"
+    default_url: ":style/missing.png"
 
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
+
+   validates_attachment_file_name :avatar, matches: [/png\Z/, /jpe?g\Z/]
 end

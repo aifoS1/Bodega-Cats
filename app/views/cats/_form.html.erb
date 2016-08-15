@@ -16,13 +16,14 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :bodega_id %><br>
-    <%= f.text_field :bodega_id %>
+    <label for="bodega-address">Bodega Address</label>
+    <input type="text" name="[:address]" id="bodega-address">
   </div>
-    <div class="field">
+    <div class="field" id='pictureInput'>
     <%= f.label :avatar %>
     <%= f.file_field :avatar %>
   </div>
+  <div id="target"></div>
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -14,3 +14,22 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+$(function() {
+  $('#pictureInput').on('change', function(event) {
+    var files = event.target.files;
+    var image = files[0]
+    var reader = new FileReader();
+    reader.onload = function(file) {
+      var img = new Image();
+      console.log(file);
+      console.log(img)
+      img.src = file.target.result;
+
+      $('#target').html(img).css('width', '200px');
+    }
+    reader.readAsDataURL(image);
+    console.log(files);
+  });
+});

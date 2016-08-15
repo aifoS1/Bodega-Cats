@@ -1,3 +1,13 @@
 // Place all the styles related to the Cats controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#target {
+	img {
+		width: 100%;
+	}
+}
+
+.defaultImgWidth {
+	width: 200px;
+}
