@@ -15,7 +15,6 @@ class CatsController < ApplicationController
   # GET /cats/new
   def new
     @cat = Cat.new
-    @bodega = Bodega.new
   end
 
   # GET /cats/1/edit
@@ -26,11 +25,10 @@ class CatsController < ApplicationController
   # POST /cats.json
   def create
     @cat = Cat.new(cat_params)
-    bodega = Bodega.new(address: @cat.bodega.address)
 
     respond_to do |format|
-      if @cat.save
-        bodega.save
+
+      if @cat.save && @bodega.save
         format.html { redirect_to @cat, notice: 'Cat was successfully created.' }
         format.json { render :show, status: :created, location: @cat }
       else
@@ -72,6 +70,6 @@ class CatsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cat_params
-      params.require(:cat).permit(:name, :bodega_id, :avatar)
+      params.require(:cat).permit(:name, :avatar, :bodega_id, :address, :lat, :lng, :bodega_name, bodegas_attributes: [:id, :address, :lat, :lng, :name, :_destroy])
     end
 end

@@ -17,7 +17,7 @@
  <div style="display:inline-block;margin-left:40px;">
       <%= image_tag cat.avatar.url(:square), :class => "defaultImgWidth" %>
       <p><%= cat.name %></p> 
-      <p><%= cat.bodega.address %></p>
+      <p><%= cat.address %></p>
       <p>
         <%= link_to 'Show', cat %>
        <%= link_to 'Edit', edit_cat_path(cat) %>

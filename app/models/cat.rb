@@ -1,5 +1,8 @@
 class Cat < ActiveRecord::Base
-  belongs_to :bodega
+  # belongs_to :bodega
+  # has_one :bodega
+
+  # accepts_nested_attributes_for :bodega, allow_destroy: true, reject_if: lambda {|attributes| attributes['name'].blank?}
 
   has_attached_file :avatar, styles: { 
     medium: "300x300>", 

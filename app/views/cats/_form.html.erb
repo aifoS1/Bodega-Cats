@@ -16,8 +16,16 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <label for="bodega-address">Bodega Address</label>
-    <input type="text" name="[:address]" id="bodega-address">
+    <%= f.label :bodega_name %><br>
+    <%= f.text_field :bodega_name %>
+<!--<label for="bodega-name">Bodega Name</label>
+    <input type="text" name="cat[bodega_name]" id="bodega-name"> -->
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+<!-- <label for="bodega-address">Bodega Address</label>
+    <input type="text" name="cat[address]" id="bodega-address"> -->
   </div>
     <div class="field" id='pictureInput'>
     <%= f.label :avatar %>
